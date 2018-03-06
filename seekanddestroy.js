@@ -1,9 +1,17 @@
+
+
 function destroyer(arr) {
-	var newArr = arr;
-	for(var i = 0; i > arr.arguments.length; i++) {
-		for(var j = 0; j > arr.length; j++) {
-			
+	var arrArgs = [].slice.call(arguments, 1);	
+	var remo = arr.filter(function(val) {
+
+		for(var i = 0; arrArgs.length > i; i++){
+			return !(arrArgs.indexOf(val) >= 0);
 		}
-	}
-	return arr;
+
+	});
+	return remo
 }
+
+
+destroyer([1, 2, 3, 1, 2, 3], 2, 3);
+
